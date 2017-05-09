@@ -25,7 +25,7 @@ library(parcoords)
 # setwd("/Users/vyakhya.sachdeva/github/Data_Viz_Project/ShiningData-/project-prototype")
 airbnb1 <- read.csv("listings.csv")
 airbnb <- read.csv("listings_2.csv")
-airbnb_all <- merge(x = airbnb1, y = airbnb2, by = "id", all.x = TRUE)
+airbnb_all <- merge(x = airbnb1, y = airbnb, by = "id", all.x = TRUE)
 
 
 colnames(airbnb)
