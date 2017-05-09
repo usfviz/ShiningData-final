@@ -14,6 +14,8 @@ The following packages must be installed prior to running this code:
 - `leaflet`
 - `plotly`
 - `sunburstR`
+- `googleVis`
+- `dygraphs`
 
 
 
