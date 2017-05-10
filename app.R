@@ -85,7 +85,22 @@ if (interactive()) {
                      ),
                      
                      mainPanel(
-                       leafletOutput("SFmap", width = "800px",height="700px")
+                       leafletOutput("SFmap", width = "1000px",height="1000px")
+                     )
+                   ),
+                   
+                   tabPanel(
+                     'Parallel Coordinates',
+                     sidebarPanel(
+                       wellPanel(
+                         selectInput("neighborhood1", "Neighborhood_1", unique(airbnb$neighbourhood_cleansed), selected = 'Mission'),
+                         selectInput("neighborhood2", "Neighborhood_2", unique(airbnb$neighbourhood_cleansed), selected = 'Visitacion Valley'),
+                         selectInput("neighborhood3", "Neighborhood_3", unique(airbnb$neighbourhood_cleansed), selected = 'Pacific Heights'),
+                         selectInput("neighborhood4", "Neighborhood_4", unique(airbnb$neighbourhood_cleansed), selected = 'Parkside')
+                       )
+                     ),
+                     mainPanel(
+                       parcoordsOutput("parcoords", width = "900px", height = "450px")
                      )
                    ),
                    
@@ -110,21 +125,6 @@ if (interactive()) {
                    tabPanel(
                      'Sunburst',
                      sunburstOutput('sunburst', width = "100%", height = "400px")
-                   ),
-                   
-                   tabPanel(
-                     'Parallel Coordinates',
-                     sidebarPanel(
-                       wellPanel(
-                         selectInput("neighborhood1", "Neighborhood_1", unique(airbnb$neighbourhood_cleansed), selected = 'Mission'),
-                         selectInput("neighborhood2", "Neighborhood_2", unique(airbnb$neighbourhood_cleansed), selected = 'Visitacion Valley'),
-                         selectInput("neighborhood3", "Neighborhood_3", unique(airbnb$neighbourhood_cleansed), selected = 'Pacific Heights'),
-                         selectInput("neighborhood4", "Neighborhood_4", unique(airbnb$neighbourhood_cleansed), selected = 'Parkside')
-                       )
-                     ),
-                     mainPanel(
-                       parcoordsOutput("parcoords", width = "900px", height = "900px")
-                     )
                    ),
                    
                    tabPanel(
